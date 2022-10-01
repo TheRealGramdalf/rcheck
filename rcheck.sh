@@ -12,13 +12,12 @@ if [ "$3" != -l ]; then
 fi
 
 # Number of lines to split files into
-splitcount=100
-#15000
-findsplit="$logout_path""workdir/findsplit"
-workdir="$logout_path""workdir/"
+splitcount=15000
+findsplit=$(echo "$logout_path""workdir/findsplit")
+workdir=$(echo "$logout_path""workdir/")
 hashLog(){
     # 'cat' the logfile in question, outputting it to an array
-    curlog="$1"
+    curlog=$(echo "$1")
     hasharr -h "$curlog" catarray
     source "$curlog".array
     chunk=$(echo "$curlog" | sed "s/.*findsplit//g" | sed 's/.fs//g')
@@ -30,8 +29,8 @@ hashLog(){
     catarray=()
 }
 mkarr(){
-    name="$2"
-    arrname="$3"
+    name=$(echo "$2")
+    arrname=$(echo "$3")
     if [ "$1" == "-c" ]; then
         {
         echo "#!/bin/bash"
@@ -43,8 +42,8 @@ mkarr(){
 }
 hasharr(){
     if [ "$1" == "-h" ]; then
-        hashname="$2"
-        hasharrname="$3"
+        hashname=$(echo "$2")
+        hasharrname=$(echo "$3")
         {
         echo "#!/bin/bash"
         echo "$hasharrname""=("
@@ -71,7 +70,7 @@ echo "Cleaning up..."
 for f in "${logarray[@]}"; do
     unset dest
     unset src
-    src="$f.hash"
+    src=$(echo "$f.hash")
     dest=$(echo "$src" | sed "s/\.fs//g"  | sed "s/findsplit/hashlog/g")
     mv "$src" "$dest"
     cat "$dest" >> "$logout_path"masterlist.hash
