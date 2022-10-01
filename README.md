@@ -10,5 +10,5 @@ In general, however, this should be safe to use, as there are no destructive act
 
 Here is a simple oneliner you can use to run the script (Note that it requires user input in order to actually run)
 ```
-wget -q https://raw.githubusercontent.com/TheRealGramdalf/rcheck/main/rcheck.sh && chmod +x ./rcheck.sh && bash rcheck.sh
+wget -q https://raw.githubusercontent.com/TheRealGramdalf/rcheck/main/rcheck.sh && chmod +x ./rcheck.sh && bash ./rcheck.sh
 ```
