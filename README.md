@@ -1,3 +1,9 @@
+# THIS IS ARCHIVED!
+**The script is currently not functional, and will most likely break when used for it's original purpose!**
+This repository is an archive, and is only kept as a resource for people learning how to script. I recommend using [rclone](https://rclone.org/) instead, as it is much more robust, and actually functions. 
+
+
+
 # rcheck
 
 `rcheck` is a fairly simple bash script which will take an input directory, find everything with the type of `file` (Note: This does not include symlinks, since it uses `find -type f`), and create a log with the hash and path to each file.
